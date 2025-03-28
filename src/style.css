@@ -1,0 +1,292 @@
+/* 📌 RWD 調整 */
+@media (max-width: 1024px) {
+    .main-layout {
+      flex-direction: column; /* 平板以下，改為上下排列 */
+    }
+    .sidebar {
+      display: none; /* 隱藏左右側邊欄 */
+    }
+    .content {
+      flex: 1; /* 主要內容區塊填滿 */
+    }
+  }
+  @media (max-width: 900px) {
+    .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+    }
+    .product-grid {
+      flex-direction: column; /* 手機版：商品改為單列顯示 */
+      align-items: center;
+    }
+    .navbar {
+      display: flex;
+      flex-wrap: nowrap; /* 不讓內容換行 */
+      justify-content: space-around; /* 均勻分布 */
+      white-space: nowrap; /* 文字不換行 */
+      font-size: 18px; /* 減小字體，避免擠壓 */
+    }
+    .product-image {
+      width: 50px; /* 固定寬度 */
+      height: auto; /* 保持比例 */
+      object-fit: cover; /* 確保圖片不變形 */
+    }
+    .product-card {
+      width: 90% !important;
+      max-width: 350px !important;
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      margin: 10px auto !important;
+      min-height: auto !important;
+  }
+    .product-card button {
+      width: 80%; /* 避免按鈕過寬 */
+      margin: 5px 0; /* 增加按鈕間距 */
+      font-size: 30px;
+    }
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    .product-info2 {
+      display: flex;
+      width: auto;
+    }
+    .button-tool{
+      display: flex;
+    }
+    
+    
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden; /* ✅ 超過高度時，顯示滾動條 */
+}
+
+body {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+.container {
+  
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+/* 主要內容 */
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* 調整卡片間距 */
+  justify-content: flex-start; /* 或 space-between 讓卡片均勻分布 */
+  width: 100%;
+}
+
+
+/* 工具列 */
+.toolbar2{
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+.toolbar3 {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+ 
+}
+
+.nav-item{
+  display: block;
+  padding: 6px 8px;
+  padding-bottom: 3px;
+  text-align: center;
+  color: #888;
+  border-bottom: 4px solid transparent;
+
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    }
+/* 確保 Modal 在網頁中央 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 背景半透明 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+  }
+  /* 按鈕排版 */
+  .modal-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Modal 標題 */
+.modal h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Modal 內部內容 */
+  .modal-content {
+    background: white;
+    width: 90%; /* 📌 手機時佔90%，電腦時不超過 400px */
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  /* 標籤 Label */
+  .modal-content label {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  /* 輸入框 */
+  .modal-content input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 24px;
+  }
+  
+  /* 按鈕容器 */
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  /* 按鈕樣式 */
+  button {
+    padding: 2px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24pt;
+  }
+  
+  /* 確認按鈕 */
+  .confirm-btn {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  /* 取消按鈕 */
+  .cancel-btn {
+    background: #d9534f;
+    color: white;
+  }
+  
+  /* 開啟 Modal 按鈕 */
+  .open-modal-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  /* 關閉 (X) 按鈕 */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .close-btn:hover {
+    color: black;
+  }
+  /* 📌 圖片預覽區 */
+.image-preview img {
+    max-width: 100%; /* 📌 圖片自適應寬度 */
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-item {
+    margin-right: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+}
+
+.tab-item.active {
+  color: #000000;
+  font-weight: bold;
+  border: 3px solid #0a0a0a;
+}
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.filter-item {
+  font-size: 24px;
+  color: #666;
+}
+.search-container{
+  margin: 10px;
+}
+
+
+
+
+
