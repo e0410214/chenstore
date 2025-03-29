@@ -22,7 +22,10 @@
           </thead>
           <tbody>
             <tr v-for="(customer, index) in store.customers" :key="customer.id">
-              <td>{{ customer.name }} ({{ customer.nickname }})</td>
+              <td>
+                {{ customer.name }}
+                <span v-if="customer.nickname">({{ customer.nickname }})</span>
+              </td>
               <td>{{ customer.phone }}</td>
               <td>{{ customer.store }}</td>
               <td>{{ customer.storenum }}</td>
