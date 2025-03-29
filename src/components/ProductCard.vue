@@ -18,7 +18,7 @@
     <div class="button-group">
       <div v-if="mode === 'manage'" class="button-tool">
         <button @click="$emit('edit-product', product)">修改</button>
-        <button @click="deleteProduct">刪除</button> <!-- ✅ 直接同步 Supabase -->
+        <button @click="deleteProduct(product.id)">刪除</button> <!-- 正確 --><!-- ✅ 直接同步 Supabase -->
       </div>
 
       <!-- ✅ 訂購模式 -->
