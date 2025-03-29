@@ -5,12 +5,15 @@
     <!-- 🔹 顧客選擇 -->
     <div class="odtoolbar">
       <label style="font-size: 24pt;">顧客</label>
-      <select id="customer-select" style="font-size: 24pt;" v-model="selectedCustomer" @change="handleCustomerChange">
-        <option selected>請選擇顧客</option>
-        <option v-for="customer in customers" :key="customer.id" :value="customer.name">
-          {{ customer.name }}
-        </option>
-      </select>
+      <v-select
+        style="font-size: 24pt;"
+        :options="customers"
+        label="name"                    <!-- 顯示顧客名字 -->
+        :reduce="customer => customer.id"<!-- v-model 實際存 id -->
+        v-model="selectedCustomer"
+        placeholder="請選擇顧客"
+        @update:modelValue="handleCustomerChange"
+      />
       <button v-if="isMobile" @click="toggleCart" class="cart-toggle">🛒</button>
     </div>
 
@@ -58,6 +61,8 @@ import ProductCard from "../components/ProductCard.vue";
 import CartItemCard from "../components/CartItemCard.vue";
 import { useProductStore } from '../store';
 import { computed, ref, watch, onMounted, onUnmounted ,onBeforeUnmount } from "vue";
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
 
 export default {
   components: { ProductCard, CartItemCard },
