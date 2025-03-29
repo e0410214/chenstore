@@ -175,7 +175,7 @@ th, td {
 }
 
 .table-responsive {
-  max-height: 650px;
+  max-height: 550px;
   overflow-y: auto;
   border: 1px solid #ddd;
 }
