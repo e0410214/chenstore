@@ -43,7 +43,7 @@
 
         <!-- 🔹 總計 -->
         <div class="cart-total">
-          <div class= "totalWeight" v-if="totalWeight > 4500">
+          <div class= "totalWeight" v-if="totalWeight >= 4200">
             <h3>重量: {{ totalWeight }}</h3>
           </div>
           <h3>總計: {{ totalPrice }}</h3>
